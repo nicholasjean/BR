@@ -5,6 +5,7 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AngularFireAuth, AngularFireAuthProvider } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
+import { RegisterPage } from '../register/register'
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -45,8 +46,8 @@ export class HomePage {
   }
 
   _register(){
-    //  let modal = this.modalCtrl.create(RegisterModalPage);
-    //  modal.present();
+     let modal = this.modalCtrl.create(RegisterPage);
+     modal.present();
   }
 
 }
