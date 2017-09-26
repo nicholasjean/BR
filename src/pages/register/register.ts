@@ -5,6 +5,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
+import { DashboardPage } from '../dashboard/dashboard';
+
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -31,9 +33,10 @@ export class RegisterPage {
         let email = this.registerForm.value.email;
         let password = this.registerForm.value.password
         this.afAuth.auth.createUserWithEmailAndPassword(email, password).then((success)=>{
-          console.log("Login Success: ", success);
+          console.log("Register Success: ", success);
+          this.navCtrl.setRoot(DashboardPage);
         }).catch((error) => {
-          console.log("Login Failed: ", error);
+          console.log("Register Failed: ", error);
         });
       }
     } else {

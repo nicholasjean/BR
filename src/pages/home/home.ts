@@ -5,7 +5,8 @@ import { NavController, ModalController } from 'ionic-angular';
 import { AngularFireAuth, AngularFireAuthProvider } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import { RegisterPage } from '../register/register'
+import { DashboardPage } from '../dashboard/dashboard';
+import { RegisterPage } from '../register/register';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -39,6 +40,7 @@ export class HomePage {
       let password = this.loginForm.value.password
       this.afAuth.auth.signInWithEmailAndPassword(email, password).then((success)=>{
         console.log("Login Success: ", success);
+        this.navCtrl.setRoot(DashboardPage);
       }).catch((error) => {
         console.log("Login Failed: ", error);
       });
