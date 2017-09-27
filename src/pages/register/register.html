@@ -1,34 +1,34 @@
 <ion-header>
-  
-    <ion-navbar>
-      <ion-title>Register</ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  
-  
-  <ion-content padding>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
   <form [formGroup]="registerForm" (ngSubmit)="_registerSubmit($event)">
-  <ion-list>
-  
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="text"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label stacked>Retype Password</ion-label>
-      <ion-input formControlName="repassword" type="password"></ion-input>
-    </ion-item>
-    <button ion-button icon-right type="submit" [disabled]="!registerForm.valid">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input formControlName="email" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input formControlName="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Retype Password</ion-label>
+        <ion-input formControlName="repassword" type="password"></ion-input>
+      </ion-item>
+      <button ion-button icon-right type="submit" [disabled]="!registerForm.valid">
     Register
     <ion-icon name="log-in"></ion-icon>
   </button>
-  </ion-list>
-    </form>
-  </ion-content>
+    </ion-list>
+  </form>
+</ion-content>
